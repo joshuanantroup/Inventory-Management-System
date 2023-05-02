@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c482.inventorypa.AddPartController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="52.0" layoutY="34.0" prefHeight="79.0" prefWidth="491.0" spacing="20.0">
+         <children>
+            <Label alignment="CENTER" text="Add Part">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="inHouse" mnemonicParsing="false" onAction="#inHouseSelected" text="In-House">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgPartType" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="outsourced" mnemonicParsing="false" onAction="#outsourcedSelected" text="Outsourced" toggleGroup="$tgPartType">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox layoutX="46.0" layoutY="122.0" prefHeight="257.0" prefWidth="431.0">
+         <children>
+            <VBox prefHeight="257.0" prefWidth="102.0" spacing="20.0">
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" />
+                  <Label text="Inventory" />
+                  <Label text="Price/Cost" />
+                  <Label text="Max" />
+                  <Label fx:id="machineIDCompanyLabel" text="Machine ID" />
+               </children>
+            </VBox>
+            <VBox prefHeight="281.0" prefWidth="134.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="partIDText" editable="false" promptText="Auto Gen - Disabled" />
+                  <TextField fx:id="partNameText" />
+                  <TextField fx:id="partInventoryText" />
+                  <TextField fx:id="partPriceText" />
+                  <TextField fx:id="partMaxText" />
+                  <TextField fx:id="machineIdCompanyText" />
+               </children>
+            </VBox>
+            <VBox prefHeight="281.0" prefWidth="51.0">
+               <children>
+                  <Label text="Min">
+                     <VBox.margin>
+                        <Insets top="148.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="281.0" prefWidth="111.0">
+               <children>
+                  <TextField fx:id="partMinText">
+                     <VBox.margin>
+                        <Insets top="145.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="251.0" layoutY="340.0" prefHeight="100.0" prefWidth="219.0" spacing="25.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onSavePartButton" text="Save" />
+            <Button mnemonicParsing="false" onAction="#onCancelPartButton" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
